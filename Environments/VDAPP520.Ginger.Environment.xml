@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="74f1ca97-ea77-4f32-a5bc-45e24aa5962c" ItemType="ProjEnvironment" CreatedBy="Savvina.Rousou" Created="202402061519" GingerVersion="5.1.0.0" Version="10" LastUpdateBy="Savvina.Rousou" LastUpdate="202402081700" />
+<ProjEnvironment Guid="74f1ca97-ea77-4f32-a5bc-45e24aa5962c" Name="Databases" ParentGuid="00000000-0000-0000-0000-000000000000">
+<Applications>
+<EnvApplication Active="True" Guid="cc58bbde-3828-49b1-b750-8bf23a86b03c" Name="Enviroments" ParentGuid="00000000-0000-0000-0000-000000000000">
+<Dbs>
+<Database ConnectionString="Data Source=(DESCRIPTION= (ADDRESS=(PROTOCOL=TCP)(Host=195.233.85.102)(Port=7003))(CONNECT_DATA=(SID=TKMSX1))(SERVER=DEDICATED))&#xD;&#xA;;User Id={USER};Password={PASS};" DBType="Oracle" Guid="214d6736-d9c4-48cc-92af-08bb867dfabe" Name="VDAPP520" ParentGuid="00000000-0000-0000-0000-000000000000" Pass="VDAPP520" TNS="(DESCRIPTION= (ADDRESS=(PROTOCOL=TCP)(Host=195.233.85.102)(Port=7003))(CONNECT_DATA=(SID=TKMSX1))(SERVER=DEDICATED))&#xD;&#xA;" User="VDAPP520" />
+<Database ConnectionString="Data Source=(DESCRIPTION= (ADDRESS=(PROTOCOL=TCP)(Host=195.233.85.102)(Port=7003))(CONNECT_DATA=(SID=TKMSX1))(SERVER=DEDICATED));User Id={USER};Password={PASS};" DBType="Oracle" Guid="505b199c-6a5a-4536-9f19-c0d391577078" Name="VDREF519" ParentGuid="00000000-0000-0000-0000-000000000000" Pass="VDREF519" TNS="(DESCRIPTION= (ADDRESS=(PROTOCOL=TCP)(Host=195.233.85.102)(Port=7003))(CONNECT_DATA=(SID=TKMSX1))(SERVER=DEDICATED))" User="VDREF519" />
+</Dbs>
+</EnvApplication>
+</Applications>
+</ProjEnvironment></GingerRepositoryItem>

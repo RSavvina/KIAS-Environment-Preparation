@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="fb39726a-5f65-4be1-8042-63bcadafddeb" ItemType="BusinessFlow" CreatedBy="Savvina.Rousou" Created="202402081141" GingerVersion="5.1.0.0" Version="9" LastUpdateBy="Savvina.Rousou" LastUpdate="202402131415" />
+<BusinessFlow Guid="fb39726a-5f65-4be1-8042-63bcadafddeb" Name="Flow 1" ParentGuid="00000000-0000-0000-0000-000000000000" Source="Ginger" Status="Unknown">
+<Activities>
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivitiesGroupID="Group" ActivityName="Unix Part" AutomationStatus="Development" Description="Scripts, prod to pprod" ErrorHandlerMappingType="ErrorHandlersMatchingTrigger" Guid="db26b423-566c-4dc4-9e25-948db9570ab8" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="92,00%%" TargetApplication="Mediation" Type="Regular">
+<Acts>
+<ActExcel Active="True" Description="Excel Action" Guid="40e32ab4-9b90-4739-83b6-c54ed084392a" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="6183c796-e45d-4923-9038-bd29c15951c8" Param="ExcelActionType" ParentGuid="00000000-0000-0000-0000-000000000000" Value="ReadData" />
+<ActInputValue Guid="3adeefe2-140a-4154-b820-fac94a679e54" Param="ColMappingRules" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="f9cf6ce5-928a-463d-8fed-ed595a1c0599" Param="SelectAllRows" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="aa21d095-d810-4c9c-ad03-13531bab2806" Param="ExcelFileName" ParentGuid="00000000-0000-0000-0000-000000000000" Value="~\\Documents\ENVIROMENTS.xlsx" />
+<ActInputValue Guid="781d2dde-5b43-4924-a00c-b78ac579e99d" Param="SheetName" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Φύλλο1" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="647b5de8-ea7a-4fa0-85fc-a34fc50733b0" Operator="Equals" Param="REF SCRIPT ENV No" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="REF ENV No" />
+<ActReturnValue Active="True" Guid="28e28a4b-863c-4d7e-8277-69537637474e" Operator="Equals" Param="INSTANCE" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="INSTANCE" />
+<ActReturnValue Active="True" Guid="5a17420f-d289-43d2-85a3-0a422048f5e3" Operator="Equals" Param="SC SCRIPT ENV No" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="SC ENV No" />
+<ActReturnValue Active="True" Guid="a72af59f-ac6c-49e1-beb7-bd62c05a8067" Operator="Equals" Param="MMC env for prod path" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="MMC ENV for PROD PATH" />
+<ActReturnValue Active="True" Guid="f9363006-e23f-4df4-bc0b-a7a0cfb8d2fe" Operator="Equals" Param="MMO env for prod path" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="MMO ENV for PROD PATH" />
+<ActReturnValue Active="True" Guid="39b5dde4-8a3d-412d-b8fc-b6c7656cbed8" Operator="Equals" Param="BACKDATING ENV WITH SPACE" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BACKDATING ENV" />
+</ReturnValues>
+</ActExcel>
+<ActConsoleCommand ConsoleCommand="FreeCommand" Description="stop_jobs_clear_logs" Guid="7bcc8d37-7c51-44e4-96df-f16421efb331" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="e13bda53-1ba3-4159-b984-124cb6d86ae7" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="stop_jobs_clear_logs" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="cd /misc/acc-archive/util/vipul/UPS/Env_Setup" Guid="4654d9d2-657c-4a67-bc2e-e83a2025f8b1" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="3d391cbd-bb71-4b4f-9de9-7aeed9b385aa" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="cd /misc/acc-archive/util/vipul/UPS/Env_Setup" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="./Ref_setup.sh" ExpString="Enter value for envno:" Guid="98d4b92e-f933-432e-b16e-93342f845488" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WaitTime="1000" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="cbdf2277-3681-45a8-8273-b5203167a0f8" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="./Ref_setup.sh " />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="Give reference enviroment" Guid="f771f561-e242-4f5e-ba91-81eb64d52dae" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WaitTime="20" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="4d009fd0-ba3a-4a9c-8082-60abfdb7946f" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{Var Name=REF ENV No}" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="Give instanse of enviroment" Guid="1e782626-3c9c-4e18-ab5a-45b853b2e76b" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WaitTime="50" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="655f17d1-d60a-475f-b75f-62b8d55122d3" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{Var Name=INSTANCE}" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="./SC_setup.sh" ExpString="Enter value for envno:" Guid="2e24e58a-6f01-429e-9cbe-000735723c6a" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WaitTime="1000" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="7898201d-d555-44ee-b3d6-6e4dec82ace9" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="./SC_setup.sh" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="Give SC enviroment" Guid="24d46cd0-e328-438a-bad3-1f101babad43" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WaitTime="20" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="8cab5bfb-3177-4b63-b244-3045b341c47b" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{Var Name=SC ENV No}" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="Give instance of enviroment" Guid="9abb3015-3315-43da-869b-cea3497d9c5e" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WaitTime="50" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="88d0c475-8f82-4364-86b5-2c7bd63bc5a7" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{Var Name=INSTANCE}" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="copy the data from PROD to PPROD directory part 1" Guid="a49a43b1-5971-4afa-ac7f-babe828f60e0" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="643f76a2-dbf2-411b-b852-9d1729fc375d" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="cd /users/{Var Name=MMC ENV for PROD PATH}/tlg_home/data/switch/prod" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="copy the data from PROD to PPROD directory part 2" Guid="fa98684f-d7c4-4996-9adc-744aee0ec16d" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="df2a95c8-1d52-44fe-8140-eee9b9852880" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="cp swtable* /users/{Var Name=MMC ENV for PROD PATH}/var/mmo/projs/sc/SCGRD/dat" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="BACKDATING SCRIPT" Guid="d6ecddcc-4ae8-4c0f-bb11-df049643ee94" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="74bcc5e8-c0d6-45ae-ab02-bb74ba79b7b7" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="refresh_date_on_pp_tables.pl {Var Name=BACKDATING ENV} 62" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="Confirm BACKDATING SCRIPT" Guid="e2cf37d8-ebc2-445e-a28b-898fc7d64fc9" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WaitTime="1000" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="ecb04e78-1dec-4007-8c9d-361993fba273" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Y" />
+</InputValues>
+</ActConsoleCommand>
+</Acts>
+
+<Variables>
+<VariableString Guid="5fdcf815-6b38-4211-88bc-66e84829aa8c" InitialStringValue="EDREF142" MappedOutputType="None" Name="REF ENV No" ParentGuid="db26b423-566c-4dc4-9e25-948db9570ab8" ParentName="Flow 1\Group\Unix Part" ParentType="Activity" SetAsInputValue="False" SetAsOutputValue="False" />
+<VariableString Guid="83fd0dd3-d0ca-4068-9fba-bbe4edba4b4b" InitialStringValue="TKGSX7" MappedOutputType="None" Name="INSTANCE" ParentGuid="db26b423-566c-4dc4-9e25-948db9570ab8" ParentName="Flow 1\Group\Unix Part" ParentType="Activity" SetAsInputValue="False" SetAsOutputValue="False" />
+<VariableString Guid="2badada5-8a2b-40c6-8ef0-eac91f0295b1" InitialStringValue="EDSC142" MappedOutputType="None" Name="SC ENV No" ParentGuid="db26b423-566c-4dc4-9e25-948db9570ab8" ParentName="Flow 1\Group\Unix Part" ParentType="Activity" SetAsInputValue="False" SetAsOutputValue="False" />
+<VariableString Guid="d8c724ab-6db6-43cd-8226-828f8e16a360" InitialStringValue="vdwrk520" MappedOutputType="None" Name="MMC ENV for PROD PATH" ParentGuid="db26b423-566c-4dc4-9e25-948db9570ab8" ParentName="Flow 1\Group\Unix Part" ParentType="Activity" SetAsInputValue="False" SetAsOutputValue="False" />
+<VariableString Guid="b1d81da2-9649-484e-92ef-7e205e1bbcb7" InitialStringValue="vdwrk522" MappedOutputType="None" Name="MMO ENV for PROD PATH" ParentGuid="db26b423-566c-4dc4-9e25-948db9570ab8" ParentName="Flow 1\Group\Unix Part" ParentType="Activity" SetAsInputValue="False" SetAsOutputValue="False" />
+<VariableString Guid="78bfe7b6-ccee-43c3-907b-404ba42763ff" InitialStringValue="VD 519" MappedOutputType="None" Name="BACKDATING ENV" ParentGuid="db26b423-566c-4dc4-9e25-948db9570ab8" ParentName="Flow 1\Group\Unix Part" ParentType="Activity" SetAsInputValue="False" SetAsOutputValue="False" />
+</Variables>
+</Activity>
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivitiesGroupID="Group" ActivityName="APN Patching &amp; Devices configuration" AutomationStatus="Development" ErrorHandlerMappingType="ErrorHandlersMatchingTrigger" Guid="bd6ce043-3ede-409e-9236-b5a95cabc30d" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100,00%%" TargetApplication="Mediation2" Type="Regular">
+<Acts>
+<ActExcel Active="True" Description="Excel Action - Save the APN queries" Guid="c2c63812-44c6-4ac6-8e44-ee3ffab8dbd7" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="e049f194-72c0-4af7-a262-0dd64cc2c1be" Param="ExcelActionType" ParentGuid="00000000-0000-0000-0000-000000000000" Value="ReadData" />
+<ActInputValue Guid="9be48898-4fd2-43b8-8036-c1f5e823da50" Param="ColMappingRules" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="9aaf03a6-8de5-4916-9ef1-8f413800d3ed" Param="SelectAllRows" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="f3b02142-cc99-420b-8fc0-f22f1329055b" Param="ExcelFileName" ParentGuid="00000000-0000-0000-0000-000000000000" Value="~\\Documents\UPDATES.xlsx" />
+<ActInputValue Guid="361eadcc-6a96-492c-b28f-a66fed06a5a5" Param="SheetName" ParentGuid="00000000-0000-0000-0000-000000000000" Value="APN Queries" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="4319cec8-d0ff-4163-a7fc-49682ea3ea28" Operator="Equals" Param="OUTPUT_ACTION" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="OUTPUT_ACTION QUERIES" />
+<ActReturnValue Active="True" Guid="691f5bfd-738a-4cee-8cc7-347349615f45" Operator="Equals" Param="FINAL UPDATES" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="FINAL UPDATES APN" />
+<ActReturnValue Active="True" Guid="fd30b9d8-2eb9-4ad9-882e-c03454ca924b" Operator="Equals" Param="SYNC_CONN_PARAM" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="SYNC_CONN_PARAM QUERIES" />
+</ReturnValues>
+</ActExcel>
+<ActExcel Active="True" Description="Excel Action - Save the Device Queries" Guid="b85069a7-b7cb-4adf-8bf1-f7010f789607" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="566fcb5b-8654-4866-a446-5b4b8bdddeab" Param="ExcelActionType" ParentGuid="00000000-0000-0000-0000-000000000000" Value="ReadData" />
+<ActInputValue Guid="f5422a31-003e-4212-8555-a414af5a4887" Param="ColMappingRules" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="fdf3d55a-7b5f-4e1d-be55-134729fcd7bf" Param="SelectAllRows" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="2e3cd4f4-26ba-4a46-b4ae-43da781383af" Param="ExcelFileName" ParentGuid="00000000-0000-0000-0000-000000000000" Value="~\\Documents\UPDATES.xlsx" />
+<ActInputValue Guid="048636f0-b190-4e6e-a138-adbd5dc9bf9a" Param="SheetName" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Devices Configuration" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="f5a06f94-18e2-47c1-989c-8af858c3acd7" Operator="Equals" Param="Devices Queries" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="Devices Config Queries" />
+</ReturnValues>
+</ActExcel>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="Local OUTPUT_ACTION" Guid="c39bada1-f14c-4974-bc3c-0b3147ad2bbb" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="8ec957b4-3ab8-4529-85c1-4d8e1d02ef8c" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="create_local_reference -w -u OUTPUT_ACTION" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="Local UPS_DEFAULT" Guid="baeffc98-b5c2-4f28-a989-87bcc40fe1c5" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="3f40cb73-72f8-4e43-96fa-5b6c214485c2" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="create_local_reference -w -u UPS_DEFAULT" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="Local GENERIC_CONDITIONS" Guid="e7b955e4-0c0b-42f5-9f66-ea3076f0e494" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="b8c85492-2971-40c8-9cf2-39a7a95484c0" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="create_local_reference -w -u GENERIC_CONDITIONS" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="Local sync_conn_prm" Guid="f3e11256-c63c-443f-9d05-c663c6102aa0" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="240b4417-e3d1-4dbd-b8c4-fb909a21c1b8" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="create_local_reference -w -u sync_conn_prm" />
+</InputValues>
+</ActConsoleCommand>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="Local UPS_NUMBER_RANGES" Guid="9771f974-965b-4202-a9d6-53454db3d4f1" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Unix" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="443e1837-10da-470f-96a9-cf5300d94773" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" Value="create_local_reference -w -u UPS_NUMBER_RANGES" />
+</InputValues>
+</ActConsoleCommand>
+<ActDBValidation Active="True" AppName="Enviroments" DBName="VDAPP520" DBValidationType="FreeSQL" Description="DataBase Action - Run APN - OUTPUT_ACTION UPDATE queries" Guid="089c7730-1d5f-4ac2-824f-2d5bc8fff2e5" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="f8a9074f-960b-442e-b423-ee841eb94e65" Param="SQL" ParentGuid="00000000-0000-0000-0000-000000000000" Value="CREATE OR REPLACE PROCEDURE queriesOA AS BEGIN&#xD;&#xA;{Var Name=OUTPUT_ACTION QUERIES}&#xD;&#xA;END;" />
+<ActInputValue Guid="982f2ab0-e700-4048-b4a0-28f1123bf73a" Param="QueryTypeRadioButton" ParentGuid="00000000-0000-0000-0000-000000000000" Value="FreeSQL" />
+<ActInputValue Guid="040198e2-f5eb-4b9d-8723-b19579720316" Param="QueryFile" ParentGuid="00000000-0000-0000-0000-000000000000" Value="~\\Documents\sims_update_queries.sql" />
+<ActInputValue Guid="152fffae-cfbd-454a-83ad-76fed46c5996" Param="CommitDB" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="c5c88952-021e-454a-8723-69c4114f4f6b" Param="InsertJson" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="8cef32c7-be1f-49e8-a8c4-672093475361" Param="PrimaryKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="a5b6f879-a680-4be8-9744-00e8c0966144" Param="PartitionKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActDBValidation>
+<ActDBValidation Active="True" AppName="Enviroments" DBName="VDAPP520" DBValidationType="FreeSQL" Description="DataBase Action - Run APN - OUTPUT_ACTION UPDATE queries PART 2" Guid="0c71cefd-0925-4deb-9c81-46b3469823c9" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="e0e2ffcc-5a54-4113-864c-0ba21c16a30b" Param="SQL" ParentGuid="00000000-0000-0000-0000-000000000000" Value="begin &#xD;&#xA;queriesOA; &#xD;&#xA;&#xD;&#xA;end;" />
+<ActInputValue Guid="03cae436-8281-4412-a53e-7c68e21ca544" Param="QueryTypeRadioButton" ParentGuid="00000000-0000-0000-0000-000000000000" Value="FreeSQL" />
+<ActInputValue Guid="48347e70-29d6-4a6d-862d-ae9c6cf223f2" Param="QueryFile" ParentGuid="00000000-0000-0000-0000-000000000000" Value="~\\Documents\sims_update_queries.sql" />
+<ActInputValue Guid="7b2957e7-d08a-4531-ada6-275ae1000ef0" Param="CommitDB" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="3476baeb-f252-48db-a551-0f0fb5563b43" Param="InsertJson" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="274e1372-cff4-4ea1-9395-c416bd46c871" Param="PrimaryKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="f295dd2f-a120-46bb-851a-0de10d4cebc0" Param="PartitionKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActDBValidation>
+<ActDBValidation Active="True" AppName="Enviroments" DBName="VDAPP520" DBValidationType="FreeSQL" Description="DataBase Action - Run APN - Final Updates of APN UPDATE queries" Guid="fe09aa0b-9007-4892-9c89-3f390d56705b" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="f0e42203-287a-4a62-93d1-e8baac551e0c" Param="SQL" ParentGuid="00000000-0000-0000-0000-000000000000" Value="CREATE OR REPLACE PROCEDURE queriesFA AS BEGIN&#xD;&#xA;{Var Name=FINAL UPDATES APN}&#xD;&#xA;END;" />
+<ActInputValue Guid="e7b1c66c-2ed8-44cb-99c6-1edcac28331a" Param="QueryTypeRadioButton" ParentGuid="00000000-0000-0000-0000-000000000000" Value="FreeSQL" />
+<ActInputValue Guid="c95bec8d-61b1-4800-b265-9d18c3778dc8" Param="QueryFile" ParentGuid="00000000-0000-0000-0000-000000000000" Value="~\\Documents\sims_update_queries.sql" />
+<ActInputValue Guid="d82e85a1-a8e3-4262-8f21-d94d0149e699" Param="CommitDB" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="807db7c7-9df1-4066-a571-df85c21e7c51" Param="InsertJson" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="811b3ce0-d48b-470d-9a91-380362db7965" Param="PrimaryKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="39c0c2b5-7dfb-440f-8df6-f9e66fddeafb" Param="PartitionKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActDBValidation>
+<ActDBValidation Active="True" AppName="Enviroments" DBName="VDAPP520" DBValidationType="FreeSQL" Description="DataBase Action - Run APN - Final Updates APN UPDATE queries PART 2" Guid="467375d7-1782-4bf2-b1dc-f14283ae8410" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="f9a52f4c-64ea-44cc-ad7a-ea31f7102c43" Param="SQL" ParentGuid="00000000-0000-0000-0000-000000000000" Value="begin &#xD;&#xA;queriesFA; &#xD;&#xA;&#xD;&#xA;end;" />
+<ActInputValue Guid="76742ee1-a11d-4c93-8e05-56d5fc595165" Param="QueryTypeRadioButton" ParentGuid="00000000-0000-0000-0000-000000000000" Value="FreeSQL" />
+<ActInputValue Guid="eae21242-2f1b-4692-8a3b-20a07a648cf5" Param="QueryFile" ParentGuid="00000000-0000-0000-0000-000000000000" Value="~\\Documents\sims_update_queries.sql" />
+<ActInputValue Guid="05fb0a80-f7c9-43fb-8900-7687a50dcb06" Param="CommitDB" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="2178cc28-6f68-40ca-852b-73c0bc66e579" Param="InsertJson" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="74ce0460-7d02-443a-bb36-3f6ac67d7c95" Param="PrimaryKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="b8ba4706-7b57-460e-a922-c16cf2bb964a" Param="PartitionKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActDBValidation>
+<ActDBValidation Active="True" AppName="Enviroments" DBName="VDREF519" DBValidationType="FreeSQL" Description="DataBase Action - Run APN - SYNC_CONN_PARAM updates PART 1" Guid="0910d3c3-1b0e-4c18-95a1-ad554536997b" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="02fb5afb-37c1-4091-9c54-c8f8761dc5f0" Param="SQL" ParentGuid="00000000-0000-0000-0000-000000000000" Value="CREATE OR REPLACE PROCEDURE queriesSCP AS BEGIN&#xD;&#xA;{Var Name=SYNC_CONN_PARAM QUERIES}&#xD;&#xA;END;" />
+<ActInputValue Guid="dc0504ae-72ca-4a73-8579-811c12faad77" Param="QueryTypeRadioButton" ParentGuid="00000000-0000-0000-0000-000000000000" Value="FreeSQL" />
+<ActInputValue Guid="a3d4b89c-cc4a-496b-b991-4bb747cbf820" Param="QueryFile" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="4f9572fb-c1d9-4ab5-b85a-b88cdf4ce560" Param="CommitDB" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="de14d413-266d-477a-9b4b-313f39ebe67e" Param="InsertJson" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="2f3c002c-5a7c-4266-8ce5-5a1e0d56cdd2" Param="PrimaryKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="b8890259-b1c2-49d9-a3e3-147a88c5cdcb" Param="PartitionKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActDBValidation>
+<ActDBValidation Active="True" AppName="Enviroments" DBName="VDREF519" DBValidationType="FreeSQL" Description="DataBase Action - Run sync_conn_prm  queries part 2" Guid="b6b20c77-67a3-4745-be6f-1a453f0fefdc" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="f9d23e95-4d28-432e-8378-5f4fc9dbf6af" Param="SQL" ParentGuid="00000000-0000-0000-0000-000000000000" Value="begin &#xA;queriesSCP; &#xA;&#xA;end;" />
+<ActInputValue Guid="377c6167-1e09-4a94-9593-d2df9c18324b" Param="QueryTypeRadioButton" ParentGuid="00000000-0000-0000-0000-000000000000" Value="FreeSQL" />
+<ActInputValue Guid="06f8f305-04e1-4a4e-bc8b-1a5e99d6656a" Param="QueryFile" ParentGuid="00000000-0000-0000-0000-000000000000" Value="~\\Documents\sims_update_queries.sql" />
+<ActInputValue Guid="b5ea4cc7-2e53-4a55-9602-b0a8abea2e3d" Param="CommitDB" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="975bc476-b865-4e30-8fcc-34223e372919" Param="InsertJson" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="8705eaa8-77d6-453f-a452-1c7271f3384b" Param="PrimaryKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="d942250f-64f1-4ed5-9d31-b3b37b6d10ee" Param="PartitionKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActDBValidation>
+<ActDBValidation Active="True" AppName="Enviroments" DBName="VDAPP520" DBValidationType="FreeSQL" Description="DataBase Action - Run Devices Queries PART 1" Guid="33249bd7-7c79-42e6-96be-f227d8fe096f" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="7acbb17e-74f3-4de3-bb14-bd36f76c51e5" Param="SQL" ParentGuid="00000000-0000-0000-0000-000000000000" Value="CREATE OR REPLACE PROCEDURE queriesDC AS BEGIN&#xD;&#xA;{Var Name=Devices Config Queries}&#xD;&#xA;END;" />
+<ActInputValue Guid="f93e43e4-deb7-4538-86a0-0d43bae8629a" Param="QueryTypeRadioButton" ParentGuid="00000000-0000-0000-0000-000000000000" Value="FreeSQL" />
+<ActInputValue Guid="387d5f04-3dd0-4c22-8197-5f1dfc52ce49" Param="QueryFile" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="7797757e-f860-4084-a789-d000bbd90af7" Param="CommitDB" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="828c1f83-2312-45dd-87c3-8f06587ecc4e" Param="InsertJson" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="84cfc175-15d5-4f18-b731-3e2c8f1df7a9" Param="PrimaryKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="2e4bbea2-924a-4eaa-b791-afee1884299a" Param="PartitionKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActDBValidation>
+<ActDBValidation Active="True" AppName="Enviroments" DBName="VDAPP520" DBValidationType="FreeSQL" Description="DataBase Action - Run Devices Queries PART 2" Guid="b28a6822-d78a-4aff-84d4-093371ab1eb1" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="fb010eff-e3af-4bf6-a66e-e057f33790c1" Param="SQL" ParentGuid="00000000-0000-0000-0000-000000000000" Value="begin &#xA;queriesDC; &#xA;&#xA;end;" />
+<ActInputValue Guid="61d36154-0b15-47d8-a5af-32fee3cf9ceb" Param="QueryTypeRadioButton" ParentGuid="00000000-0000-0000-0000-000000000000" Value="FreeSQL" />
+<ActInputValue Guid="13503276-fd15-4d8a-a2db-fd00c2cbd493" Param="QueryFile" ParentGuid="00000000-0000-0000-0000-000000000000" Value="~\\Documents\sims_update_queries.sql" />
+<ActInputValue Guid="bfddd835-e6e1-41f3-b08d-e019a46f51dc" Param="CommitDB" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="e19a9bcf-f316-45f0-9278-acfdbc90e58d" Param="InsertJson" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="3808c069-bd0c-4868-8846-27bd7f44a36c" Param="PrimaryKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="f1f23176-d46c-464b-aacb-60281079976f" Param="PartitionKey" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActDBValidation>
+</Acts>
+
+<Variables>
+<VariableString Guid="ea9596fd-37d6-492c-bc09-3893001617bf" InitialStringValue="UPDATE OUTPUT_ACTION set FIELD_VALUE='WEB52' WHERE FIELD_VALUE='WEB' AND FIELD LIKE 'APNDATA.%.pdp.refPdpContextName'; " MappedOutputType="None" Name="OUTPUT_ACTION QUERIES" ParentGuid="bd6ce043-3ede-409e-9236-b5a95cabc30d" ParentName="Flow 1\Group\APN Patching &amp; Devices configuration" ParentType="Activity" SetAsInputValue="False" SetAsOutputValue="False" />
+<VariableString Guid="a55068f0-0a85-4614-ae5f-75956cb081fa" InitialStringValue="Insert into UPS_NUMBER_RANGES (PARAM_NAME,PARAM_GROUP,FROM_NO,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,TO_NO,PARAM_VALUE) values ('SCP_ADDR_PREPAID','CCS','0000000000',to_date('09-OCT-2017 00.00.00','DD-MON-RRRR HH24.MI.SS'),null,106149,'SW973 ','973  ',null,'174200000000','922');&#xA;Insert into UPS_NUMBER_RANGES (PARAM_NAME,PARAM_GROUP,FROM_NO,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,TO_NO,PARAM_VALUE) values ('SCP_ADDR_PREPAID','CCS','1700000001',to_date('09-OCT-2017 00.00.00','DD-MON-RRRR HH24.MI.SS'),null,106149,'SW973 ','973  ',null,'1700000002','922');&#xA;Insert into UPS_NUMBER_RANGES (PARAM_NAME,PARAM_GROUP,FROM_NO,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,TO_NO,PARAM_VALUE) values ('SCP_ADDR_POSTPAID','CCS','1742000001',to_date('09-OCT-2017 00.00.00','DD-MON-RRRR HH24.MI.SS'),null,106149,'SW973 ','973  ',null,'1792000000','299');&#xA;Insert into UPS_NUMBER_RANGES (PARAM_NAME,PARAM_GROUP,FROM_NO,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,TO_NO,PARAM_VALUE) values ('SCP_ADDR_POSTPAID','CCS','1525000000',to_date('09-OCT-2017 00.00.00','DD-MON-RRRR HH24.MI.SS'),null,106149,'SW973 ','973  ',null,'15750000000','201');&#xA;Insert into UPS_NUMBER_RANGES (PARAM_NAME,PARAM_GROUP,FROM_NO,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,TO_NO,PARAM_VALUE) values ('SCP_ADDR_POSTPAID','CCS','0000000000',to_date('09-OCT-2017 00.00.00','DD-MON-RRRR HH24.MI.SS'),null,106149,'SW973 ','973  ',null,'1742000000','201');&#xA;commit;&#xA;delete from SRV_PARAM where SRV_ID='ENUM03';&#xA;Insert into SRV_PARAM (SRV_ID,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,LOGIN_SCRIPT,LOGOUT_SCRIPT,MAX_IDLE_TIME,CONS_FAIL,CON_RETRY,CON_DELAY_TIME,DUMMY_IND,DU_TRX_EXEC_TIME,DU_SRV_REPL_STS_CD,MAX_DVC_RESPONSE,VERSION_INIT_FILE,CYCLE_SEND,CYCLE_RECEIVE,KEEP_ALIVE_SCRIPT,PORT_NUMBER,KEEP_ALIVE_TIME,SERVER_TYPE,REMOTE_ADDRESS,CON_FO_DELAY,CON_FO_TIMEOUT,CONS_FAIL_FO,MAX_FO_CON_ATTEMPT) values ('ENUM03',to_date('06-MAR-2014 15.00.08','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.25','DD-MON-RRRR HH24.MI.SS'),11111,'SW941 ','DLSC ',0,null,null,360,999,1,60,'N',10,'CS',60,null,0,0,null,8089,300,null,'172.31.57.36/https://172.31.57.36:8089/viewsoap',1,1,0,0);&#xA;commit;&#xA;update srv_param set REMOTE_ADDRESS='139.7.4.50/https://139.7.4.50/mint', PORT_NUMBER='14004' where srv_id in ('TIDB01');&#xA;commit;&#xA;update srv_param set REMOTE_ADDRESS='AC116:MMC://10.132.81.86:20968', PORT_NUMBER='20968' where srv_id in ('TUXCSM1');&#xA;commit;&#xA;delete from srv_param where srv_id in ('CSBP01','CSIP01','CCSUM01','JSON01');&#xA;Insert into SRV_PARAM (SRV_ID,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,LOGIN_SCRIPT,LOGOUT_SCRIPT,MAX_IDLE_TIME,CONS_FAIL,CON_RETRY,CON_DELAY_TIME,DUMMY_IND,DU_TRX_EXEC_TIME,DU_SRV_REPL_STS_CD,MAX_DVC_RESPONSE,VERSION_INIT_FILE,CYCLE_SEND,CYCLE_RECEIVE,KEEP_ALIVE_SCRIPT,PORT_NUMBER,KEEP_ALIVE_TIME,SERVER_TYPE,REMOTE_ADDRESS,CON_FO_DELAY,CON_FO_TIMEOUT,CONS_FAIL_FO,MAX_FO_CON_ATTEMPT) values ('CCSUM01',to_date('19-OCT-2005 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.25','DD-MON-RRRR HH24.MI.SS'),0,null,'MA050',0,null,null,300,100,1,60,'N',1,'CS',20,null,0,0,null,12900,0,'S','172.31.194.44/http://172.31.194.44:12900/bes/services',0,0,0,0);&#xA;Insert into SRV_PARAM (SRV_ID,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,LOGIN_SCRIPT,LOGOUT_SCRIPT,MAX_IDLE_TIME,CONS_FAIL,CON_RETRY,CON_DELAY_TIME,DUMMY_IND,DU_TRX_EXEC_TIME,DU_SRV_REPL_STS_CD,MAX_DVC_RESPONSE,VERSION_INIT_FILE,CYCLE_SEND,CYCLE_RECEIVE,KEEP_ALIVE_SCRIPT,PORT_NUMBER,KEEP_ALIVE_TIME,SERVER_TYPE,REMOTE_ADDRESS,CON_FO_DELAY,CON_FO_TIMEOUT,CONS_FAIL_FO,MAX_FO_CON_ATTEMPT) values ('CSBP01',to_date('19-OCT-2005 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.25','DD-MON-RRRR HH24.MI.SS'),0,null,'MA050',0,null,null,300,100,1,60,'N',1,'CS',20,null,0,0,null,28081,0,'S','172.31.194.38/http://172.31.194.38:28081/services',0,0,0,0);&#xA;Insert into SRV_PARAM (SRV_ID,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,LOGIN_SCRIPT,LOGOUT_SCRIPT,MAX_IDLE_TIME,CONS_FAIL,CON_RETRY,CON_DELAY_TIME,DUMMY_IND,DU_TRX_EXEC_TIME,DU_SRV_REPL_STS_CD,MAX_DVC_RESPONSE,VERSION_INIT_FILE,CYCLE_SEND,CYCLE_RECEIVE,KEEP_ALIVE_SCRIPT,PORT_NUMBER,KEEP_ALIVE_TIME,SERVER_TYPE,REMOTE_ADDRESS,CON_FO_DELAY,CON_FO_TIMEOUT,CONS_FAIL_FO,MAX_FO_CON_ATTEMPT) values ('CSIP01',to_date('19-OCT-2005 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.25','DD-MON-RRRR HH24.MI.SS'),0,null,'MA050',0,null,null,300,100,1,60,'N',1,'CS',20,null,0,0,null,18081,0,'S','172.31.194.49/ckmservice/services/UPSMarketingPermissionInterfaceImplService',0,0,0,0);&#xA;Insert into SRV_PARAM (SRV_ID,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,LOGIN_SCRIPT,LOGOUT_SCRIPT,MAX_IDLE_TIME,CONS_FAIL,CON_RETRY,CON_DELAY_TIME,DUMMY_IND,DU_TRX_EXEC_TIME,DU_SRV_REPL_STS_CD,MAX_DVC_RESPONSE,VERSION_INIT_FILE,CYCLE_SEND,CYCLE_RECEIVE,KEEP_ALIVE_SCRIPT,PORT_NUMBER,KEEP_ALIVE_TIME,SERVER_TYPE,REMOTE_ADDRESS,CON_FO_DELAY,CON_FO_TIMEOUT,CONS_FAIL_FO,MAX_FO_CON_ATTEMPT) values ('JSON01',to_date('19-OCT-2005 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.25','DD-MON-RRRR HH24.MI.SS'),0,null,'MA050',0,null,null,300,100,1,60,'N',1,'CS',20,null,0,0,null,12900,0,'S','172.31.194.44/https://172.31.194.44:12900/bes/ucec/v1/',0,0,0,0);&#xA;commit;&#xA;delete from SC_GENERIC_PARAM where proc_id  in ('CSBP01','CSIP01','CCSUM01','JSON01');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('CCSUM01','DEBUG_FLOW',to_date('06-JAN-2014 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),98020,'C1327 ','C1327',0,'20');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('CCSUM01','SSL_CA_FILE',to_date('17-NOV-2003 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),0,null,'SC016',0,'/misc/acc-archive/switch/dev/CRs/SW925/SSL/DevCA/Vodafone_TJSV_CA_internal_use_only.crt');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('CCSUM01','SSL_CIPHER',to_date('17-NOV-2003 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),0,null,'SC016',0,'AES256-SHA');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('CCSUM01','SSL_VERSION',to_date('17-NOV-2003 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),0,null,'SC016',0,'V1');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('CCSUM01','USE_BASIC_AUTH',to_date('17-NOV-2003 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),0,null,'SC016',0,'Y');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('CSBP01','DEBUG_FLOW',to_date('06-JAN-2014 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),98020,'C1327 ','C1327',0,'20');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('CSBP01','SSL_CA_FILE',to_date('17-NOV-2003 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),0,null,'SC016',0,'/misc/acc-archive/switch/dev/CRs/SW925/SSL/DevCA/Vodafone_TJSV_CA_internal_use_only.crt');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('CSBP01','SSL_CIPHER',to_date('17-NOV-2003 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),0,null,'SC016',0,'AES256-SHA');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('CSBP01','SSL_VERSION',to_date('17-NOV-2003 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),0,null,'SC016',0,'V1');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('CSIP01','DEBUG_FLOW',to_date('06-JAN-2014 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),98020,'C1327 ','C1327',0,'20');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('CSIP01','SSL_CA_FILE',to_date('17-NOV-2003 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),0,null,'SC016',0,'/misc/acc-archive/switch/dev/CRs/SW925/SSL/DevCA/VFDevCA.cer');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('CSIP01','SSL_CIPHER',to_date('17-NOV-2003 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),0,null,'SC016',0,'AES256-SHA');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('CSIP01','SSL_VERSION',to_date('17-NOV-2003 00.00.00','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),0,null,'SC016',0,'V1');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('JSON01','SSL_CA_FILE',to_date('25-JUL-2017 15.56.36','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),0,null,'SW963',0,'/misc/acc-archive/switch/dev/CRs/SW925/SSL/DevCA/Vodafone_TJSV_CA_internal_use_only.crt');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('JSON01','SSL_CIPHER',to_date('25-JUL-2017 15.56.36','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),0,null,'SW963',0,'AES256-SHA');&#xA;Insert into SC_GENERIC_PARAM (PROC_ID,PARAM_NAME,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,PARAM_VALUE) values ('JSON01','SSL_VERSION',to_date('25-JUL-2017 15.56.36','DD-MON-RRRR HH24.MI.SS'),to_date('08-APR-2019 08.10.19','DD-MON-RRRR HH24.MI.SS'),0,null,'SW963',0,'V1');&#xA;commit;" MappedOutputType="None" Name="Devices Config Queries" ParentGuid="bd6ce043-3ede-409e-9236-b5a95cabc30d" ParentName="Flow 1\Group\APN Patching &amp; Devices configuration" ParentType="Activity" SetAsInputValue="False" SetAsOutputValue="False" />
+<VariableString Guid="ed2244d0-4d58-4e7b-bce1-0665ab2f8c33" InitialStringValue="delete from SYNC_CONN_PRM;&#xA;Insert into SYNC_CONN_PRM (SC_INST_ID,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,ADDRESS,PORT,URL_PATH) values (9,to_date('23-NOV-2006 10.49.41','DD-MON-RRRR HH24.MI.SS'),to_date('23-JAN-2007 14.19.19','DD-MON-RRRR HH24.MI.SS'),44181,null,'MP318',null,'scdeb',32616,null);&#xA;Insert into SYNC_CONN_PRM (SC_INST_ID,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,ADDRESS,PORT,URL_PATH) values (3,to_date('27-FEB-2007 14.48.42','DD-MON-RRRR HH24.MI.SS'),to_date('20-MAR-2007 15.00.36','DD-MON-RRRR HH24.MI.SS'),47146,'S63219','MA128',null,'scdeb',32617,'/');&#xA;Insert into SYNC_CONN_PRM (SC_INST_ID,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,ADDRESS,PORT,URL_PATH) values (10,to_date('19-JAN-2010 10.15.26','DD-MON-RRRR HH24.MI.SS'),null,101167,null,'C1181',null,'sccred',32618,'/');&#xA;Insert into SYNC_CONN_PRM (SC_INST_ID,SYS_CREATION_DATE,SYS_UPDATE_DATE,OPERATOR_ID,APPLICATION_ID,DL_SERVICE_CODE,DL_UPDATE_STAMP,ADDRESS,PORT,URL_PATH) values (5,to_date('20-APR-2015 07.54.30','DD-MON-RRRR HH24.MI.SS'),null,101315,'SW945 ','SW945',null,'sccred',32619,'/');&#xA;commit;" MappedOutputType="None" Name="SYNC_CONN_PARAM QUERIES" ParentGuid="bd6ce043-3ede-409e-9236-b5a95cabc30d" ParentName="Flow 1\Group\APN Patching &amp; Devices configuration" ParentType="Activity" SetAsInputValue="False" SetAsOutputValue="False" />
+<VariableString Guid="260e76de-47db-4944-8e38-474c6ce19ef7" InitialStringValue="UPDATE OUTPUT_ACTION set FIELD_VALUE='web32_CC_8_1' WHERE FIELD_VALUE='WEB52' AND FIELD LIKE 'APNDATA.%.pdp.refPdpContextName' ;" MappedOutputType="None" Name="FINAL UPDATES APN" ParentGuid="bd6ce043-3ede-409e-9236-b5a95cabc30d" ParentName="Flow 1\Group\APN Patching &amp; Devices configuration" ParentType="Activity" SetAsInputValue="False" SetAsOutputValue="False" />
+</Variables>
+</Activity>
+</Activities>
+
+<ActivitiesGroups>
+<ActivitiesGroup Guid="9fb1be7e-28b8-46df-ba88-90b810302f64" Name="Group" ParentGuid="00000000-0000-0000-0000-000000000000">
+<ActivitiesIdentifiers>
+<ActivityIdentifiers ActivityAutomationStatus="Development" ActivityDescription="Scripts, prod to pprod" ActivityGuid="db26b423-566c-4dc4-9e25-948db9570ab8" ActivityName="Unix Part" ActivityParentGuid="00000000-0000-0000-0000-000000000000" Guid="3c7975cb-1113-4030-955b-4e3c6ec04cef" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActivityIdentifiers ActivityAutomationStatus="Development" ActivityGuid="bd6ce043-3ede-409e-9236-b5a95cabc30d" ActivityName="APN Patching &amp; Devices configuration" ActivityParentGuid="00000000-0000-0000-0000-000000000000" Guid="f1e34e2d-5225-46f3-ae46-51937e46c912" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</ActivitiesIdentifiers>
+</ActivitiesGroup>
+</ActivitiesGroups>
+
+<TargetApplications>
+<TargetApplication AppName="Mediation" Guid="ba4713fe-ae5c-4fa4-8467-fd8b5e176386" LastExecutingAgentName="vdwrk520" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<TargetApplication AppName="Mediation2" Guid="735b388f-916e-4a91-8d75-f403aa05ad0f" LastExecutingAgentName="vdoln520" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</TargetApplications>
+</BusinessFlow></GingerRepositoryItem>
